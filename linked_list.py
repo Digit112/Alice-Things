@@ -6,7 +6,7 @@ class LinkedListNode:
 		if len(data) > 1:
 			self.next = LinkedListNode(data[1:])
 	
-	def append(self, next_node):
+	def set_next(self, next_node):
 		self.next = next_node
 	
 	def get(self, index):
