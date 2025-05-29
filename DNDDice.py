@@ -1,14 +1,15 @@
 import random
 
-inp = input("Die to roll: ").lower()
-
-vals = inp.split("d", 1)
-num_die = int(vals[0])
-num_sides = int(vals[1])
+inp = map(lambda a : a.strip(), input("Die to roll: ").lower().split("+"))
 
 rolls = []
-for i in range(num_die):
-	rolls.append(random.randint(1, num_sides))
+for die in inp:
+	vals = die.split("d", 1)
+	num_die = int(vals[0])
+	num_sides = int(vals[1])
+	
+	for i in range(num_die):
+		rolls.append(random.randint(1, num_sides))
 
 rolls_sorted = []
 for roll in rolls:
